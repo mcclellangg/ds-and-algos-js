@@ -1,5 +1,5 @@
 const {removeDuplicates, runnerRemovedDuplicates} = require("./q2.1-removeDupes");
-const { LinkedList } = require("./LinkedListNode");
+const { LinkedList } = require("./LinkedList");
 
 let inputLL = new LinkedList();
 let chars = ["a", "b", "d", "c", "a", "b", 1, 1, 2, 3, 1].sort();

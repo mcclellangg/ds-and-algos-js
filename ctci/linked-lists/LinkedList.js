@@ -74,7 +74,7 @@ class LinkedList {
 
         while (current) {
             if (count === index) {
-                console.log(current.data);
+                return current.data;
             }
             count++;
             current = current.next;
@@ -125,23 +125,19 @@ class LinkedList {
             current = current.next;
         }
     }
+
+    // Convert data to array
+    toArray() {
+        let arr = [];
+        let current = this.head;
+
+        while (current) {
+            arr.push(current.data);
+            current = current.next;
+        }
+
+        return arr;
+    }
 }
-
-/*
-        //TESTS
-const ll = new LinkedList();
-
-ll.insertFirst(100);
-ll.insertFirst(200);
-ll.insertLast(300);
-ll.insertLast(400);
-ll.insertAt(500, 3);
-
-// ll.printListData();
-//ll.printListData();
-ll.removeAt(4);
-ll.printListData();
-
-*/
 
 module.exports = { Node, LinkedList }
