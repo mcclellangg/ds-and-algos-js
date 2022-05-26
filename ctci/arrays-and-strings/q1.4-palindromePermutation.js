@@ -4,6 +4,8 @@
   that is the same forwards and backwards. A permutation is a rearrangement of letters. The palindrome does
   not need to be limited to just dictionary words.
 
+  EX: taco cat is a palindrome and tact coa is a permutation of that.
+
   TIPS: Consider the following description of a palindrome: a phrase with where all characters have even counts,
   or all even and one odd count (depending on length of the phrase)
 */

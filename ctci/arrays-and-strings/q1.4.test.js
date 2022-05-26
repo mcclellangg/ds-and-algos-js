@@ -8,5 +8,9 @@ describe("palindromePermutation function", () => {
 
     test("Foo Donkey is NOT a permutation of a palindrome", () => {
         expect(palindromePermutation("Foo Donkey")).toBe(false);
-    })
+    });
+
+    test("onno is a permutation of noon", () => {
+        expect(palindromePermutation("onno")).toBe(true);
+    });
 });

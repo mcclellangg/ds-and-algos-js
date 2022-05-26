@@ -26,6 +26,8 @@ function hasOneEdit(s1, s2) {
         }
         return true;
     }
+
+    return false;
 };
 
 module.exports = hasOneEdit;

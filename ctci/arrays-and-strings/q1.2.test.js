@@ -9,4 +9,8 @@ describe("isPermutation function", () => {
     test("abc is NOT a permutation of sakfjasdfjlk", () => {
         expect(isPermutation("abc", "sakfjasdfjlk")).toBe(false);
     });
+
+    test("non permutations of same length should be false", () => {
+        expect(isPermutation("abc", "ccc")).toBe(false);
+    });
 });

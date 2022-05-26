@@ -17,4 +17,20 @@ describe("hasOneEdit", () => {
     test("pale, bake //has multiple edits returns false", () => {
         expect(hasOneEdit("pale", "bake")).toBe(false);
     });
+
+    test("pale, pls //has more than 1 edit", () => {
+        expect(hasOneEdit("pale", "pls")).toBe(false);
+    });
+
+    test("pls, pale //has more than 1 edit", () => {
+        expect(hasOneEdit("pls", "pale")).toBe(false);
+    });
+
+    test("pale, pale //don't have edits", () => {
+        expect(hasOneEdit("pale", "pale")).toBe(false);
+    });
+
+    test("pale, paleontologist //s2 too large to be 1 edit", () => {
+        expect(hasOneEdit("pale", "paleontologist")).toBe(false);
+    });
 });
