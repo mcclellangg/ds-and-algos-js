@@ -67,7 +67,7 @@ class LinkedList {
         this.size++;
     }
 
-    // Get at index
+    // Get data at index
     getAt(index) {
         let current = this.head;
         let count = 0;
@@ -75,6 +75,22 @@ class LinkedList {
         while (current) {
             if (count === index) {
                 return current.data;
+            }
+            count++;
+            current = current.next;
+        }
+
+        return null;
+    }
+
+    // Get node at index
+    getNodeAt(index) {
+        let current = this.head
+        let count = 0;
+
+        while (current) {
+            if (count === index) {
+                return current;
             }
             count++;
             current = current.next;
