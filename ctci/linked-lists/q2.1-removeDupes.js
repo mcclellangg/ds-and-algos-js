@@ -6,10 +6,10 @@
   Space Complexity: Constrained by the dataMap of O(n) size
 */
 
-function removeDuplicates(ll) {
+function removeDuplicates(linkedList) {
   let dataMap = {};
 
-  let current = ll.head;
+  let current = linkedList.head;
   let previous;
 
   // traverse the linked list
@@ -19,12 +19,13 @@ function removeDuplicates(ll) {
       previous = current;
     } else {
       previous.next = current.next;
-      ll.size--;
+      linkedList.size--;
     }
 
     current = current.next
   }
-  return ll;
+
+  return linkedList;
 }
 /*
   ALTERNATIVE Answer that does not use a buffer
@@ -33,25 +34,26 @@ function removeDuplicates(ll) {
   Space Complexity: O(1)
 */
 
-function runnerRemovedDuplicates(ll) {
-  // Traverse the LL
-  let current = ll.head;
+function runnerRemovedDuplicates(linkedList) {
+  // Traverse the linkedList
+  let current = linkedList.head;
 
   while (current) {
-    // For each node, traverse the rest of the LL, and remove if
+    // For each node, traverse the rest of the linkedList, and remove if
     let runner = current;
 
     while (runner.next) {
       if (runner.next.data == current.data) {
         runner.next = runner.next.next;
-        ll.size--;
+        linkedList.size--;
       } else {
         runner = runner.next;
       }
     }
     current = current.next;
   }
-  return ll;
+
+  return linkedList;
 }
 
 module.exports = {removeDuplicates, runnerRemovedDuplicates}
