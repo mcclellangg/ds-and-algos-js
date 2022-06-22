@@ -154,6 +154,13 @@ class LinkedList {
 
         return arr;
     }
+
+    // Create LinkedList from an array
+    fromArray(arr) {
+        arr.map(n => this.insertLast(n));
+
+        return this;
+    }
 }
 
 module.exports = { Node, LinkedList }

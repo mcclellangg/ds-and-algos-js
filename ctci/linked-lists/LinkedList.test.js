@@ -27,7 +27,7 @@ describe("LinkedList", () => {
         expect(linkedList.toArray()).toEqual([100, 200, 300]);
     });
 
-    it("should get nodes based on index", () => {
+    it("should get node data based on index", () => {
         const linkedList = new LinkedList();
 
         linkedList.insertFirst(300);
@@ -38,6 +38,14 @@ describe("LinkedList", () => {
         expect(linkedList.getAt(2)).toBe(300);
 
         expect(linkedList.getAt(5)).toBeNull();
+    });
+
+    it("should get nodes at a specific index", () => {
+        const linkedList = new LinkedList().fromArray([1, 2, 3, 4]);
+
+        expect(linkedList.getNodeAt(0)).toBe(linkedList.head);
+        expect(linkedList.getNodeAt(2)).toBe(linkedList.head.next.next);
+        expect(linkedList.getNodeAt(5)).toBeNull();
     });
 
     it("should insert, and remove nodes at specified index", () => {
@@ -67,7 +75,7 @@ describe("LinkedList", () => {
         expect(linkedList.head).toBeNull();
     });
 
-    it("should do this", () => {
+    it("should insert nodes at the start and end of linked list", () => {
         const linkedList = new LinkedList();
         const logSpy = jest.spyOn(console, "log");
 
@@ -84,6 +92,13 @@ describe("LinkedList", () => {
         let arr = [100, 200, 300];
 
         arr.map(n => linkedList.insertLast(n));
+
+        expect(linkedList.toArray()).toEqual(arr);
+    });
+
+    it("should create a new linked list from an array", () => {
+        let arr = [1, 2, 4, 5];
+        const linkedList = new LinkedList().fromArray(arr);
 
         expect(linkedList.toArray()).toEqual(arr);
     });

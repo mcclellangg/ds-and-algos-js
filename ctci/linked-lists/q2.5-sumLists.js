@@ -53,13 +53,7 @@ function sumLists(a, b) {
                 currSumLL.next = new Node(0, null);
             }
 
-            if (sum >= 10) {
-                currSumLL.data += sum % 10;
-                currSumLL.next.data = 1;
-            } else {
-                currSumLL.data = sum;
-            }
-
+            currSumLL.data = sum;
             longerCurr = longerCurr.next;
             currSumLL = currSumLL.next;
         }
