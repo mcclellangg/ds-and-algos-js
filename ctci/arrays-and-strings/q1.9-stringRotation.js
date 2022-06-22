@@ -10,14 +10,14 @@
 */
 
 function isStringRotation(s1, s2) {
-    let len = s1.length;
+  let len = s1.length;
 
-    if (len == s2.length && len > 0) {
-        let containsRotation = s1 + s1;
-        return containsRotation.includes(s2);
-    }
+  if (len == s2.length && len > 0) {
+    let containsRotation = s1 + s1;
+    return containsRotation.includes(s2);
+  }
 
-    return false;
+  return false;
 }
 
 module.exports = isStringRotation;

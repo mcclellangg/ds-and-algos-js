@@ -6,18 +6,18 @@
 */
 
 function makeURL(s) {
-    let result = "";
-    let replace = "%20";
+  let result = "";
+  let replace = "%20";
 
-    for (char in s) {
-        if (s[char] == " ") {
-            result += replace;
-        } else {
-            result += s[char];
-        }
+  for (char in s) {
+    if (s[char] == " ") {
+      result += replace;
+    } else {
+      result += s[char];
     }
+  }
 
-    return result;
+  return result;
 }
 
 module.exports = makeURL;

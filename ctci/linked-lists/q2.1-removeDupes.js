@@ -22,7 +22,7 @@ function removeDuplicates(linkedList) {
       linkedList.size--;
     }
 
-    current = current.next
+    current = current.next;
   }
 
   return linkedList;
@@ -56,4 +56,4 @@ function runnerRemovedDuplicates(linkedList) {
   return linkedList;
 }
 
-module.exports = {removeDuplicates, runnerRemovedDuplicates}
+module.exports = { removeDuplicates, runnerRemovedDuplicates };

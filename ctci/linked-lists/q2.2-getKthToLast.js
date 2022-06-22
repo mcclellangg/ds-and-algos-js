@@ -10,23 +10,23 @@
 */
 
 function getKthToLast(linkedList, k) {
-    let p1 = linkedList.head;
-    let p2 = linkedList.head;
+  let p1 = linkedList.head;
+  let p2 = linkedList.head;
 
-    // set pointers k places apart
-    for (let i = 0; i < k; i++) {
-        if (!p1.next) {
-            return null;  // k is out of range
-        }
-        p1 = p1.next;
-    };
+  // set pointers k places apart
+  for (let i = 0; i < k; i++) {
+    if (!p1.next) {
+      return null; // k is out of range
+    }
+    p1 = p1.next;
+  }
 
-    while (p1) {
-        p2 = p2.next;
-        p1 = p1.next;
-    };
+  while (p1) {
+    p2 = p2.next;
+    p1 = p1.next;
+  }
 
-    return p2.data;
+  return p2.data;
 }
 /*
   Recursive Solution
@@ -39,17 +39,17 @@ function getKthToLast(linkedList, k) {
 */
 
 function getKthToLastRecursive(head, k) {
-    // Check Base Case
-    if (head == null) {
-        return 0;
-    };
+  // Check Base Case
+  if (head == null) {
+    return 0;
+  }
 
-    let index = getKthToLastRecursive(head.next, k) + 1;
-    if (index == k) {
-        console.log(head.data);
-    }
+  let index = getKthToLastRecursive(head.next, k) + 1;
+  if (index == k) {
+    console.log(head.data);
+  }
 
-    return index;
+  return index;
 }
 
 module.exports = { getKthToLast, getKthToLastRecursive };

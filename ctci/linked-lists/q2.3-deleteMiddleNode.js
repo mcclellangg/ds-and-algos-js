@@ -10,13 +10,13 @@
 */
 
 function deleteMiddleNode(node) {
-    if (!node.data || !node.next) {
-        return false;  // empty node can't be removed
-    }
+  if (!node.data || !node.next) {
+    return false; // empty node can't be removed
+  }
 
-    node.data = node.next.data;
-    node.next = node.next.next;
-    return true;  // node removed
-};
+  node.data = node.next.data;
+  node.next = node.next.next;
+  return true; // node removed
+}
 
-module.exports = {deleteMiddleNode};
+module.exports = { deleteMiddleNode };

@@ -1,8 +1,8 @@
 // Sync object
 /** @type {import('@jest/types').Config.InitialOptions} */
 const config = {
-    verbose: true,
-    "collectCoverage":true
-  };
+  verbose: true,
+  collectCoverage: true,
+};
 
-  module.exports = config;
+module.exports = config;

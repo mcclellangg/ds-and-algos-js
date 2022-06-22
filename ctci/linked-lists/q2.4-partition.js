@@ -15,34 +15,34 @@
 const { LinkedList } = require("./LinkedList");
 
 function partition(linkedList, x) {
-    let head = linkedList.head;
-    let tail = linkedList.head;
+  let head = linkedList.head;
+  let tail = linkedList.head;
 
-    let current = linkedList.head;
-    let next;
+  let current = linkedList.head;
+  let next;
 
-    while (current) {
-        next = current.next;
-        if (current.data < x) {
-            current.next = head;
-            head = current;
-        } else {
-            tail.next = current;
-            tail = current;
-        }
-
-        current = next;
-    }
-    tail.next = null;
-
-    // HACK: Convert to linked List
-    let nodeList = new LinkedList();
-    while (head) {
-        nodeList.insertLast(head.data);
-        head = head.next;
+  while (current) {
+    next = current.next;
+    if (current.data < x) {
+      current.next = head;
+      head = current;
+    } else {
+      tail.next = current;
+      tail = current;
     }
 
-    return nodeList;
-};
+    current = next;
+  }
+  tail.next = null;
 
-module.exports = { partition }
+  // HACK: Convert to linked List
+  let nodeList = new LinkedList();
+  while (head) {
+    nodeList.insertLast(head.data);
+    head = head.next;
+  }
+
+  return nodeList;
+}
+
+module.exports = { partition };

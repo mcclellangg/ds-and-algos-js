@@ -10,23 +10,22 @@
 */
 
 function stringCompressor(s) {
-    let compressed = "";
-    let count = 1;
+  let compressed = "";
+  let count = 1;
 
-    for (let i = 0; i < s.length; i++) {
-        let curr = s[i];
-        let next = s[i + 1];
-        if (next == curr) {
-            count++;
-            continue;
-        }
-        else {
-            compressed += curr + count;
-            count = 1;
-        }
+  for (let i = 0; i < s.length; i++) {
+    let curr = s[i];
+    let next = s[i + 1];
+    if (next == curr) {
+      count++;
+      continue;
+    } else {
+      compressed += curr + count;
+      count = 1;
     }
+  }
 
-    return (s.length > compressed.length) ? compressed : s;
+  return s.length > compressed.length ? compressed : s;
 }
 
 module.exports = stringCompressor;
